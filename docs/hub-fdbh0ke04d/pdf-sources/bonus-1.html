@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Bónusz 1 — Ár- és nyereségkalkulátor</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:16mm 20mm}
+@page:first{margin:0}
+html{font-size:10.5pt}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#2c1424;background:white;line-height:1.5}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+:root{--p:#b3265f;--d:#4a1633;--c:#fff8f2;--b:#ffe9d2;--mu:#7b5666;--li:#f0d6df}
+.pb{page-break-after:always;break-after:page}
+
+.cover{margin:-16mm -20mm;width:calc(100% + 40mm);height:297mm;background:linear-gradient(135deg,#4a1633 0%,#b3265f 60%,#f2a93b 100%);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28mm 22mm}
+.cover-badge{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.4);padding:4mm 8mm;border-radius:99px;font-size:9.5pt;letter-spacing:.08em;margin-bottom:6mm}
+.cover h1{font-family:'Fraunces',Georgia,serif;font-size:28pt;line-height:1.1;margin-bottom:4mm}
+.cover p{font-size:11pt;opacity:.85}
+
+h2{font-family:'Fraunces',Georgia,serif;font-size:16pt;color:var(--d);margin-bottom:3mm;padding-bottom:2mm;border-bottom:2px solid var(--p)}
+h3{font-family:'Fraunces',Georgia,serif;font-size:12pt;color:var(--p);margin:3mm 0 2mm}
+p{margin-bottom:2.5mm}
+ul,ol{padding-left:5mm;margin-bottom:2.5mm}
+li{margin-bottom:1.5mm}
+
+.box{background:var(--c);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:3mm 4mm;margin:3mm 0}
+.box.gold{border-color:#f2a93b;background:#fffbf0}
+
+table{width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.5pt}
+th{background:var(--d);color:white;padding:2.5mm 3mm;text-align:left}
+td{padding:2.5mm 3mm;border-bottom:1px solid var(--li);vertical-align:top}
+tr:nth-child(even) td{background:var(--c)}
+.num{text-align:right;font-weight:700}
+.total td{background:linear-gradient(90deg,var(--d),var(--p));color:white;font-weight:700}
+
+.calc-box{border:2px solid var(--p);border-radius:10px;padding:4mm 5mm;margin:4mm 0}
+.calc-title{font-family:'Fraunces',Georgia,serif;font-size:13pt;color:var(--d);margin-bottom:3mm}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:2mm 0;border-bottom:1px solid var(--li)}
+.calc-row:last-child{border-bottom:none;padding-top:3mm;font-weight:700;color:var(--p);font-size:11pt}
+.calc-label{color:var(--mu)}
+.calc-val{font-weight:700}
+
+.scenario{background:linear-gradient(135deg,var(--c),white);border:1px solid var(--li);border-radius:8px;padding:4mm;margin:3mm 0}
+.scenario h3{margin-top:0;font-size:11pt}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:2mm}
+.sc-item{text-align:center;padding:2mm}
+.sc-num{font-size:14pt;font-weight:700;color:var(--p)}
+.sc-label{font-size:8pt;color:var(--mu)}
+
+.tip-row{display:flex;gap:3mm;padding:2.5mm 0;border-bottom:1px solid var(--li);align-items:flex-start}
+.tip-row:last-child{border-bottom:none}
+.tip-ic{font-size:14pt;flex-shrink:0;width:7mm}
+</style>
+</head>
+<body>
+
+<div class="cover pb">
+  <div class="cover-badge">BÓNUSZ 1 · Értéke: 6.500 Ft</div>
+  <div style="font-size:40pt;margin-bottom:6mm">🧮</div>
+  <h1>Ár- és<br>nyereségkalkulátor</h1>
+  <p>Pontosan tudd, mennyit keresel minden üvegcsével.<br>Állítsd be az árat úgy, hogy megérje eladni.</p>
+</div>
+
+<div class="pb">
+<h2>Miért fontosabb az ár, mint gondolod</h2>
+<p>A kezdők legtipikusabb hibája: túl olcsón adnak el. Alábecsülik a munkájukat, elfelejtik a költségeket, vagy félnek, hogy a vevők nem fizetnek "ennyit". Az eredmény? Eladnak 20 üvegcsét, kifizetik az alapanyagokat és kevesebbet keresnek, mint egy mellékállásnál.</p>
+<p>Ez a kalkulátor megmutatja a valódi számot. Ha egyszer ismered, magabiztosan állítod be az árakat — és pontosan tudod, hány darabot kell eladnod, hogy megérje gyártani.</p>
+<div class="box gold">
+<strong>Aranyszabály:</strong> Ár = költség × 4 (minimum). Ha vásáron vagy interneten adod el, a cél a költség × 6–8. A minőségi termék jó történettel magasabb áron is elkel.
+</div>
+
+<h2>Önköltség kalkulátor 1 üvegcsére (125 ml)</h2>
+<div class="calc-box">
+<div class="calc-title">🧴 Alap recept · Adag: 4 üvegcse</div>
+<div class="calc-row"><span class="calc-label">Átlátszó tusfürdő alap (500 g · ~3.000 Ft/kg)</span><span class="calc-val">375 Ft</span></div>
+<div class="calc-row"><span class="calc-label">Lapzselatin (20 g · ~3.500 Ft/kg)</span><span class="calc-val">70 Ft</span></div>
+<div class="calc-row"><span class="calc-label">Desztillált víz (150 ml · ~400 Ft/l)</span><span class="calc-val">60 Ft</span></div>
+<div class="calc-row"><span class="calc-label">Illóolaj / parfümolaj (12 csepp · ~8.000 Ft/30 ml)</span><span class="calc-val">55 Ft</span></div>
+<div class="calc-row"><span class="calc-label">Festék (3 csepp · ~1.500 Ft/30 ml)</span><span class="calc-val">15 Ft</span></div>
+<div class="calc-row"><span class="calc-label">E-vitamin (3 ml · ~6.000 Ft/50 ml)</span><span class="calc-val">45 Ft</span></div>
+<div class="calc-row"><span class="calc-label">Üvegcse (125 ml)</span><span class="calc-val">300 Ft</span></div>
+<div class="calc-row"><span class="calc-label">Cimke + csomagolás</span><span class="calc-val">150 Ft</span></div>
+<div class="calc-row" style="border-top:2px solid var(--p);margin-top:2mm"><span class="calc-label" style="font-weight:700;color:var(--d)">ÖSSZES ÖNKÖLTSÉG / üvegcse</span><span class="calc-val" style="font-size:12pt;color:var(--p)">~1.070 Ft</span></div>
+</div>
+<div class="box">
+<strong>Megjegyzés:</strong> Az önköltség 700–1.200 Ft között mozog a prémium összetevőktől és a csomagolástól függően. Mindig számolj az összes kiadással — az üvegcse és a cimke is beletartozik!
+</div>
+</div>
+
+<div class="pb">
+<h2>Árazási szcenáriók</h2>
+
+<div class="scenario">
+<h3>🏠 Ajándékba adod ismerősöknek · Első próba</h3>
+<div class="scenario-grid">
+<div class="sc-item"><div class="sc-num">1.070 Ft</div><div class="sc-label">Önköltség</div></div>
+<div class="sc-item"><div class="sc-num">0 Ft</div><div class="sc-label">Profit (befektetés tapasztalatba)</div></div>
+</div>
+<p style="font-size:9pt;color:var(--mu);margin-top:2mm">Az első adagot az ismerősöknél teszteld — feedback és fotók nélkülözhetetlenek az első igazi eladáshoz.</p>
+</div>
+
+<div class="scenario">
+<h3>🏪 Kézműves vásár · Kezdő értékesítő</h3>
+<div class="scenario-grid">
+<div class="sc-item"><div class="sc-num">2.500 Ft</div><div class="sc-label">Eladási ár</div></div>
+<div class="sc-item"><div class="sc-num">1.430 Ft</div><div class="sc-label">Profit / üvegcse (134%)</div></div>
+<div class="sc-item"><div class="sc-num">20 db</div><div class="sc-label">Napi vásár eladás</div></div>
+<div class="sc-item"><div class="sc-num">28.600 Ft</div><div class="sc-label">Profit egy vásárból</div></div>
+</div>
+</div>
+
+<div class="scenario">
+<h3>📱 Online értékesítés · Meska / Etsy</h3>
+<div class="scenario-grid">
+<div class="sc-item"><div class="sc-num">3.500 Ft</div><div class="sc-label">Eladási ár (szállítás nélkül)</div></div>
+<div class="sc-item"><div class="sc-num">2.430 Ft</div><div class="sc-label">Profit / üvegcse (227%)</div></div>
+<div class="sc-item"><div class="sc-num">15 db/hó</div><div class="sc-label">Mérsékelt havi forgalom</div></div>
+<div class="sc-item"><div class="sc-num">36.450 Ft</div><div class="sc-label">Havi nettó profit</div></div>
+</div>
+</div>
+
+<div class="scenario">
+<h3>🎁 Prémium ajándékkészlet · Karácsony előtt</h3>
+<div class="scenario-grid">
+<div class="sc-item"><div class="sc-num">4.500 Ft</div><div class="sc-label">Eladási ár / üvegcse (prémium)</div></div>
+<div class="sc-item"><div class="sc-num">3.430 Ft</div><div class="sc-label">Profit / üvegcse (321%)</div></div>
+<div class="sc-item"><div class="sc-num">3 db szett</div><div class="sc-label">12.500 Ft (szett ára)</div></div>
+<div class="sc-item"><div class="sc-num">10 szett</div><div class="sc-label">125.000 Ft forgalom</div></div>
+</div>
+</div>
+</div>
+
+<div class="pb">
+<h2>Haszonkulcs táblázat</h2>
+<table>
+<tr><th>Önköltség</th><th>Eladási ár</th><th>Haszonkulcs</th><th>Profit / üvegcse</th></tr>
+<tr><td>1.070 Ft</td><td>2.500 Ft</td><td>134%</td><td class="num">1.430 Ft</td></tr>
+<tr><td>1.070 Ft</td><td>3.000 Ft</td><td>180%</td><td class="num">1.930 Ft</td></tr>
+<tr><td>1.070 Ft</td><td>3.500 Ft</td><td>227%</td><td class="num">2.430 Ft</td></tr>
+<tr><td>1.070 Ft</td><td>4.000 Ft</td><td>274%</td><td class="num">2.930 Ft</td></tr>
+<tr><td>1.070 Ft</td><td>4.500 Ft</td><td>321%</td><td class="num">3.430 Ft</td></tr>
+<tr><td>1.070 Ft</td><td>5.000 Ft</td><td>368%</td><td class="num">3.930 Ft</td></tr>
+</table>
+
+<h2>Árazási tippek</h2>
+<div class="tip-row"><div class="tip-ic">💡</div><div><strong>Ne félj magasan árazni.</strong> A kézzel készített terméknek van értéke. Ha valaki azt mondja, "ez drága", az valószínűleg nem a te vevőd.</div></div>
+<div class="tip-row"><div class="tip-ic">📊</div><div><strong>Nézd meg a konkurenciát.</strong> Meska.hu és Etsy-n keresd a "fürdőzselé" szót és nézd meg, mennyiért adják más eladók. Pozícionálj ennek megfelelően.</div></div>
+<div class="tip-row"><div class="tip-ic">🎀</div><div><strong>Prémium csomagolás = magasabb ár.</strong> Egy szép cimke és egy papírdoboz 300–500 Ft-ba kerül, de lehetővé teszi, hogy 1.000–2.000 Ft-tal magasabban árazz.</div></div>
+<div class="tip-row"><div class="tip-ic">🗓️</div><div><strong>Szezonális prémium.</strong> Karácsonyra, Anyák napjára és Valentin-napra emeld az árakat 15–20%-kal — a vevők várják az ünnepi kiadásokat.</div></div>
+<div class="tip-row"><div class="tip-ic">📦</div><div><strong>Szett kedvezmény.</strong> 3 darab szett esetén adj 10% kedvezményt az összárból — de a szett ára még mindig magasabb maradjon az egyes darab áránál.</div></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Bónusz 4 — Szállítói és bevásárlástervező</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:16mm 20mm}
+@page:first{margin:0}
+html{font-size:10.5pt}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#2c1424;background:white;line-height:1.5}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+:root{--p:#b3265f;--d:#4a1633;--c:#fff8f2;--b:#ffe9d2;--mu:#7b5666;--li:#f0d6df}
+.pb{page-break-after:always;break-after:page}
+
+.cover{margin:-16mm -20mm;width:calc(100% + 40mm);height:297mm;background:linear-gradient(150deg,#4a1633 0%,#b3265f 55%,#d6336c 100%);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28mm 22mm}
+.cover-badge{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.4);padding:4mm 8mm;border-radius:99px;font-size:9.5pt;letter-spacing:.08em;margin-bottom:6mm}
+.cover h1{font-family:'Fraunces',Georgia,serif;font-size:28pt;line-height:1.1;margin-bottom:4mm}
+.cover p{font-size:11pt;opacity:.85}
+
+h2{font-family:'Fraunces',Georgia,serif;font-size:16pt;color:var(--d);margin-bottom:3mm;padding-bottom:2mm;border-bottom:2px solid var(--p)}
+h3{font-family:'Fraunces',Georgia,serif;font-size:12pt;color:var(--p);margin:3mm 0 2mm}
+p{margin-bottom:2.5mm}
+ul,ol{padding-left:5mm;margin-bottom:2.5mm}
+li{margin-bottom:1.5mm}
+
+.box{background:var(--c);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:3mm 4mm;margin:3mm 0}
+.box.gold{border-color:#f2a93b;background:#fffbf0}
+
+table{width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.5pt}
+th{background:var(--d);color:white;padding:2.5mm 3mm;text-align:left}
+td{padding:2.5mm 3mm;border-bottom:1px solid var(--li);vertical-align:top}
+tr:nth-child(even) td{background:var(--c)}
+
+/* Shopping list */
+.shop-section{margin:3mm 0}
+.shop-head{background:linear-gradient(90deg,var(--p),#d6336c);color:white;padding:2mm 4mm;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt}
+.shop-item{display:grid;grid-template-columns:5mm 1fr 25mm 25mm 15mm;gap:2mm;padding:2mm 3mm;border-bottom:1px solid var(--li);font-size:9pt;align-items:center}
+.shop-item:last-child{border-bottom:none;border-radius:0 0 6px 6px;background:var(--c)}
+.shop-cb{width:4mm;height:4mm;border:1.5px solid var(--p);border-radius:2px}
+
+/* Supplier card */
+.supplier{border:1px solid var(--li);border-radius:8px;padding:3mm 4mm;margin:3mm 0}
+.supplier-name{font-family:'Fraunces',Georgia,serif;font-size:11pt;color:var(--d);margin-bottom:1mm}
+.supplier-row{display:flex;gap:3mm;font-size:9pt;margin-bottom:1mm}
+.supplier-label{color:var(--mu);min-width:18mm}
+.supplier-val{font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="cover pb">
+  <div class="cover-badge">BÓNUSZ 4 · Értéke: 4.900 Ft</div>
+  <div style="font-size:40pt;margin-bottom:6mm">🛒</div>
+  <h1>Szállítói és<br>bevásárlástervező</h1>
+  <p>Hol veszed be a legjobb áron az alapanyagokat.<br>Bevásárlólista az első adaghoz és az utánrendeléshez.</p>
+</div>
+
+<div class="pb">
+<h2>Ajánlott szállítók — Magyarország</h2>
+<p>Ezek a szállítók a legjobb minőség / ár arányú alapanyagokat kínálják fürdőzselé-készítéshez. Az árak tájékoztató jellegűek és változhatnak.</p>
+
+<div class="supplier">
+<div class="supplier-name">🌿 Florex — Illóolajok és kozmetikai alapanyagok</div>
+<div class="supplier-row"><span class="supplier-label">Weboldal:</span><span class="supplier-val">florex.hu</span></div>
+<div class="supplier-row"><span class="supplier-label">Erősség:</span><span class="supplier-val">Illóolajok, parfümolajok, bőrápolóolajok — nagy választék</span></div>
+<div class="supplier-row"><span class="supplier-label">Árak:</span><span class="supplier-val">Illóolaj 10 ml: 800–3.500 Ft · Parfümolaj 10 ml: 500–1.500 Ft</span></div>
+<div class="supplier-row"><span class="supplier-label">Min. rendelés:</span><span class="supplier-val">Nincs minimum · Szállítás: 2–3 munkanap</span></div>
+</div>
+
+<div class="supplier">
+<div class="supplier-name">🧴 Mystic Moments HU — Tusfürdő alap és zselatinok</div>
+<div class="supplier-row"><span class="supplier-label">Weboldal:</span><span class="supplier-val">mysticmoments.hu</span></div>
+<div class="supplier-row"><span class="supplier-label">Erősség:</span><span class="supplier-val">Átlátszó tusfürdő alap (prémium), zselatin, E-vitamin</span></div>
+<div class="supplier-row"><span class="supplier-label">Árak:</span><span class="supplier-val">Tusfürdő alap 1 kg: 2.800–3.500 Ft · Zselatin 500 g: 2.200 Ft</span></div>
+<div class="supplier-row"><span class="supplier-label">Min. rendelés:</span><span class="supplier-val">Nincs minimum · Szállítás: 2–4 munkanap</span></div>
+</div>
+
+<div class="supplier">
+<div class="supplier-name">🏪 dm drogéria — Festékek és kisebb mennyiségű alapanyagok</div>
+<div class="supplier-row"><span class="supplier-label">Hol érhető el:</span><span class="supplier-val">Minden nagyobb városban, dm.hu online</span></div>
+<div class="supplier-row"><span class="supplier-label">Erősség:</span><span class="supplier-val">Élelmiszer- és kozmetikai festékek, E-vitamin kapszulák</span></div>
+<div class="supplier-row"><span class="supplier-label">Árak:</span><span class="supplier-val">Festékkészlet (8 szín): 1.200–1.800 Ft · E-vitamin olaj 50 ml: 1.500 Ft</span></div>
+<div class="supplier-row"><span class="supplier-label">Megjegyzés:</span><span class="supplier-val">Kisebb mennyiségekhez ideális, de drágább mint az online szállítók</span></div>
+</div>
+
+<div class="supplier">
+<div class="supplier-name">🌐 Aliexpress — Üvegcsék és tömeges megrendelések</div>
+<div class="supplier-row"><span class="supplier-label">Weboldal:</span><span class="supplier-val">aliexpress.com</span></div>
+<div class="supplier-row"><span class="supplier-label">Erősség:</span><span class="supplier-val">125 ml és 250 ml üvegcsék tömeges rendeléshez (20–50 db)</span></div>
+<div class="supplier-row"><span class="supplier-label">Árak:</span><span class="supplier-val">125 ml üvegcse 50 db: kb. 8.000–15.000 Ft (160–300 Ft/db)</span></div>
+<div class="supplier-row"><span class="supplier-label">Szállítás:</span><span class="supplier-val">2–4 hét · Csak biztos eladóktól rendelj (5000+ értékelés, 95%+ pozitív)</span></div>
+</div>
+
+<div class="supplier">
+<div class="supplier-name">🛒 Lidl / Aldi — Zselatin és háztartási eszközök</div>
+<div class="supplier-row"><span class="supplier-label">Hol érhető el:</span><span class="supplier-val">Minden városban, lidl.hu / aldi.hu</span></div>
+<div class="supplier-row"><span class="supplier-label">Erősség:</span><span class="supplier-val">Lapzselatin (Dr. Oetker), konyhai hőmérő, mérőkanál</span></div>
+<div class="supplier-row"><span class="supplier-label">Árak:</span><span class="supplier-val">Lapzselatin 12 lap: 300–450 Ft · Hőmérő: 1.500–3.000 Ft</span></div>
+<div class="supplier-row"><span class="supplier-label">Megjegyzés:</span><span class="supplier-val">Kisebb mennyiségekhez ideális; ne vegyél több hónapra előre zselatint (lejár)</span></div>
+</div>
+</div>
+
+<div class="pb">
+<h2>Bevásárlólista — Első adag (20 üvegcse)</h2>
+<div class="shop-section">
+<div class="shop-head">🧴 Alapanyagok</div>
+<div class="shop-item"><div class="shop-cb"></div><div>Átlátszó tusfürdő alap</div><div>2 kg</div><div>~5.600–7.000 Ft</div><div>Mystic</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>Lapzselatin</div><div>100 g (5 csomag)</div><div>~1.500–2.500 Ft</div><div>Lidl/Aldi</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>Desztillált víz</div><div>1,5 l</div><div>~400–600 Ft</div><div>Dm / szupermarket</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>E-vitamin olaj (opcionális)</div><div>50 ml</div><div>~1.500 Ft</div><div>Dm / gyógyszertár</div></div>
+</div>
+
+<div class="shop-section">
+<div class="shop-head">🌸 Illóolajok / Parfümolajok (3 indító illat)</div>
+<div class="shop-item"><div class="shop-cb"></div><div>Levendula illóolaj</div><div>10 ml</div><div>~1.200–2.000 Ft</div><div>Florex</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>Eper FO (parfümolaj)</div><div>10 ml</div><div>~800–1.200 Ft</div><div>Florex</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>Citrom illóolaj</div><div>10 ml</div><div>~800–1.500 Ft</div><div>Florex</div></div>
+</div>
+
+<div class="shop-section">
+<div class="shop-head">🎨 Festékek és adalékanyagok</div>
+<div class="shop-item"><div class="shop-cb"></div><div>Élelmiszer festékkészlet (alapszínek)</div><div>1 csomag</div><div>~1.200–1.800 Ft</div><div>Dm / cukrászellátó</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>Szárított levendula / rózsa (dekoráció)</div><div>20–30 g</div><div>~800–1.500 Ft</div><div>Teabolt, dm, online</div></div>
+</div>
+
+<div class="shop-section">
+<div class="shop-head">🏺 Csomagolás</div>
+<div class="shop-item"><div class="shop-cb"></div><div>125 ml üvegcsék kupakkal</div><div>24 db (+tartalék)</div><div>~5.000–8.000 Ft</div><div>Aliexpress / Notino</div></div>
+<div class="shop-item"><div class="shop-cb"></div><div>Öntapadós cimkepapír A4 (matt)</div><div>10 lap</div><div>~800–1.500 Ft</div><div>Office Depot / dm</div></div>
+</div>
+
+<div class="box gold">
+<strong>Első adag teljes bekerülési értéke (20 üvegcse):</strong> kb. 20.000–28.000 Ft · Eladási ár: 50.000–90.000 Ft (2.500–4.500 Ft/db) · Profit: kb. 22.000–62.000 Ft
+</div>
+</div>
+
+<div class="pb">
+<h2>Bevásárlástervező — Havi utánrendelés</h2>
+<p>Ha eladtál 20 üvegcsét és újra kell rendelned, ez a sablon segít a következő adaghoz. Töltsd ki havi egyszer.</p>
+
+<table>
+<tr><th>Termék</th><th>Meglévő készlet</th><th>Szükséges mennyiség</th><th>Rendelés helye</th><th>Ár (Ft)</th></tr>
+<tr><td>Tusfürdő alap</td><td>____ g</td><td>____ kg</td><td>Mystic Moments</td><td></td></tr>
+<tr><td>Lapzselatin</td><td>____ lap</td><td>____ csomag</td><td>Lidl / Aldi</td><td></td></tr>
+<tr><td>Levendula illóolaj</td><td>____ ml</td><td>____ ml</td><td>Florex</td><td></td></tr>
+<tr><td>Eper FO</td><td>____ ml</td><td>____ ml</td><td>Florex</td><td></td></tr>
+<tr><td>Citrom illóolaj</td><td>____ ml</td><td>____ ml</td><td>Florex</td><td></td></tr>
+<tr><td>Üvegcsék (125 ml)</td><td>____ db</td><td>____ db</td><td>Aliexpress</td><td></td></tr>
+<tr><td>Cimkepapír</td><td>____ lap</td><td>____ csomag</td><td>Office Depot</td><td></td></tr>
+<tr><td style="font-weight:700">ÖSSZESEN</td><td></td><td></td><td></td><td style="font-weight:700">____ Ft</td></tr>
+</table>
+
+<h3>Vásárlási tippek</h3>
+<ul>
+<li><strong>Rendelj 25–30%-kal többet</strong> mint amire számítasz — az alapanyagok nem romlanak el gyorsan, de elfogyásuk kiesett rendeléseket okozhat</li>
+<li><strong>Figyelj az eltarthatóságra:</strong> az illóolajok és parfümolajok 1–2 évig tartanak, ha hűvösen tartod</li>
+<li><strong>Tömeges rendelés kedvezménye:</strong> 5 kg+ tusfürdő alap rendelésekor kérj 10–15% árengedményt a szállítótól</li>
+<li><strong>Zselatin frissen:</strong> ne tárolj 3 hónapnál több zselatint — nedvességet szív fel és romolhat</li>
+</ul>
+</div>
+
+</body>
+</html>

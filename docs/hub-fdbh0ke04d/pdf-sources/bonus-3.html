@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Bónusz 3 — Az első 10 rendelés terve</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:16mm 20mm}
+@page:first{margin:0}
+html{font-size:10.5pt}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#2c1424;background:white;line-height:1.5}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+:root{--p:#b3265f;--d:#4a1633;--c:#fff8f2;--b:#ffe9d2;--mu:#7b5666;--li:#f0d6df}
+.pb{page-break-after:always;break-after:page}
+
+.cover{margin:-16mm -20mm;width:calc(100% + 40mm);height:297mm;background:linear-gradient(135deg,#4a1633 0%,#b3265f 50%,#f2a93b 100%);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28mm 22mm}
+.cover-badge{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.4);padding:4mm 8mm;border-radius:99px;font-size:9.5pt;letter-spacing:.08em;margin-bottom:6mm}
+.cover h1{font-family:'Fraunces',Georgia,serif;font-size:28pt;line-height:1.1;margin-bottom:4mm}
+.cover p{font-size:11pt;opacity:.85}
+
+h2{font-family:'Fraunces',Georgia,serif;font-size:16pt;color:var(--d);margin-bottom:3mm;padding-bottom:2mm;border-bottom:2px solid var(--p)}
+h3{font-family:'Fraunces',Georgia,serif;font-size:12pt;color:var(--p);margin:3mm 0 2mm}
+p{margin-bottom:2.5mm}
+ul,ol{padding-left:5mm;margin-bottom:2.5mm}
+li{margin-bottom:1.5mm}
+
+.box{background:var(--c);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:3mm 4mm;margin:3mm 0}
+.box.gold{border-color:#f2a93b;background:#fffbf0}
+
+table{width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.5pt}
+th{background:var(--d);color:white;padding:2.5mm 3mm;text-align:left}
+td{padding:2.5mm 3mm;border-bottom:1px solid var(--li);vertical-align:top}
+tr:nth-child(even) td{background:var(--c)}
+
+/* Week plan */
+.week{border:1.5px solid var(--li);border-radius:10px;overflow:hidden;margin:3mm 0}
+.week-head{background:linear-gradient(90deg,var(--d),var(--p));color:white;padding:2.5mm 4mm;display:flex;justify-content:space-between;align-items:center}
+.week-title{font-family:'Fraunces',Georgia,serif;font-size:12pt}
+.week-badge{background:rgba(255,255,255,.2);padding:1mm 3mm;border-radius:99px;font-size:8pt}
+.week-body{padding:3mm 4mm}
+.task{display:flex;gap:2mm;margin-bottom:2mm;align-items:flex-start;font-size:9.5pt}
+.task-cb{width:4mm;height:4mm;border:1.5px solid var(--p);border-radius:2px;flex-shrink:0;margin-top:.5mm}
+.task-em{font-size:11pt;width:5mm;flex-shrink:0}
+
+/* Order tracker */
+.order-row{display:grid;grid-template-columns:8mm 1fr 20mm 20mm 20mm;gap:2mm;padding:2mm 3mm;border-bottom:1px solid var(--li);font-size:9pt;align-items:center}
+.order-num{font-weight:700;color:var(--p);text-align:center}
+.order-head{background:var(--d);color:white;border-radius:6px 6px 0 0}
+.order-head .order-num,.order-head div{color:white;font-weight:700;font-size:8.5pt}
+</style>
+</head>
+<body>
+
+<div class="cover pb">
+  <div class="cover-badge">BÓNUSZ 3 · Értéke: 8.200 Ft</div>
+  <div style="font-size:40pt;margin-bottom:6mm">📋</div>
+  <h1>Az első 10<br>rendelés terve</h1>
+  <p>Heti terv az első 10 vevőig.<br>Lépésről lépésre — sem kapkodás, sem ötlettelenség.</p>
+</div>
+
+<div class="pb">
+<h2>Miért fontos a terv az első 10 rendeléshez</h2>
+<p>A legtöbb kézműves iparos az első eladásig eljut, de az első 10 rendelés az, ami eldönti, hogy hobbi marad-e vagy valódi mellékkeresetté válik. Ez az a pont, ahol sokan feladják — nem azért, mert a termék nem jó, hanem mert nincs terv.</p>
+<p>Ez a terv hetente lebontja, mi a következő lépés. 4 hét, 10 rendelés — ez megvalósítható.</p>
+<div class="box gold">
+<strong>A terv logikája:</strong> 1. héten készülsz és fotózol. 2. héten megmutatod az ismerőseidnek. 3. héten nyilvánosan megosztod. 4. héten az első rendelések megérkeznek, és elindítod a visszajelzési ciklust.
+</div>
+</div>
+
+<div class="week">
+<div class="week-head"><span class="week-title">1. hét — Felkészülés</span><span class="week-badge">0 rendelés</span></div>
+<div class="week-body">
+<div class="task"><div class="task-cb"></div><div class="task-em">📦</div><div>Rendelj be alapanyagokat az első 20 üvegcsére (eper, levendula, leciton — 3 jól bevált illat)</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">🧪</div><div>Készíts el egy próbaadagot minden illatból, ellenőrizd az állagot és az illatot</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">📸</div><div>Fotózd le az üvegcséket természetes fényben (ablak mellett, fehér háttérrel vagy fa asztalon)</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">🏷️</div><div>Tervezd meg és nyomtasd ki a cimkéket (Canva, Bónusz 2 sablonok alapján)</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">💰</div><div>Számítsd ki az árakat (Bónusz 1 kalkulátor alapján) — válaszd meg a végső eladási árat</div></div>
+</div></div>
+
+<div class="week">
+<div class="week-head"><span class="week-title">2. hét — Első visszajelzések</span><span class="week-badge">0–2 rendelés</span></div>
+<div class="week-body">
+<div class="task"><div class="task-cb"></div><div class="task-em">🎁</div><div>Adj ingyen 3–5 ismerősnek tesztelésre — egy-egy üvegcsét kéréssel, hogy adjanak visszajelzést</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">📱</div><div>Posztolj egy Instagramon vagy Facebook Stories-ban "nemsokára kész" előzetes képet</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">💬</div><div>Állíts be egy WhatsApp-csoportot vagy Messenger-üzenetet a közvetlen körnek: "Hamarosan elérhető"</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">📊</div><div>Gyűjtsd össze a visszajelzéseket: Mit szeretek? Mi nem tetszik? Mennyit fizetnének érte?</div></div>
+</div></div>
+
+<div class="week">
+<div class="week-head"><span class="week-title">3. hét — Nyilvános bemutatkozás</span><span class="week-badge">2–5 rendelés</span></div>
+<div class="week-body">
+<div class="task"><div class="task-cb"></div><div class="task-em">📱</div><div>Tölts fel 3 minőségi fotót Instagramra / Facebook üzleti oldalra (minden illat különállóan)</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">🛒</div><div>Regisztrálj Meska.hu-ra vagy Etsy-re és töltsd fel az első 3 terméket</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">📣</div><div>Kérd meg az ismerősöket, akik teszteltek: posztolják ki a képet és taggeljenek be</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">💌</div><div>Küldj üzenetet a közvetlen kapcsolataidnak: "Elérhető! Érdekesnek tartja, hogy megrendel?"</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">🗓️</div><div>Nézz utána a következő 4 hétben lévő kézműves vásároknak a közeledben</div></div>
+</div></div>
+
+<div class="week">
+<div class="week-head"><span class="week-title">4. hét — Első rendelések és tanulság</span><span class="week-badge">5–10 rendelés</span></div>
+<div class="week-body">
+<div class="task"><div class="task-cb"></div><div class="task-em">📦</div><div>Teljesítsd a rendeléseket — minden csomag kapjon egy kézzel írt kísérőkártyát</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">⭐</div><div>A kézbesítés után 3 nappal kérj visszajelzést: "Hogyan tetszett? Megosztanád egy fotóban?"</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">📊</div><div>Értékeld: Melyik illat fogyott a legjobban? Milyen csatornán jöttek a rendelések?</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">🔄</div><div>Rendelj be alapanyagokat a következő adagra a gyorsan fogyó illatokból (dupla mennyiség)</div></div>
+<div class="task"><div class="task-cb"></div><div class="task-em">🎯</div><div>Tűzd ki a következő 30 nap célját: hány rendelés, melyik csatorna, milyen vásár</div></div>
+</div></div>
+
+<div style="margin-top:5mm">
+<h2>Rendeléskövetési napló (első 10)</h2>
+<div class="order-row order-head"><div class="order-num">#</div><div>Vevő / megjegyzés</div><div style="text-align:center">Termék</div><div style="text-align:center">Összeg</div><div style="text-align:center">Csatorna</div></div>
+<div class="order-row"><div class="order-num">01</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">02</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">03</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">04</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">05</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">06</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">07</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">08</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">09</div><div></div><div></div><div></div><div></div></div>
+<div class="order-row"><div class="order-num">10</div><div></div><div></div><div></div><div></div></div>
+</div>
+
+</body>
+</html>

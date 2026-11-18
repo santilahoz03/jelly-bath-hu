@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>90 Oldalas Útmutató — Fürdőzselé Készlet</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:16mm 20mm}
+@page:first{margin:0}
+html{font-size:10.5pt}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#2c1424;background:white;line-height:1.5}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+:root{--p:#b3265f;--d:#4a1633;--c:#fff8f2;--b:#ffe9d2;--mu:#7b5666;--li:#f0d6df}
+.pb{page-break-after:always;break-after:page}
+
+/* Cover */
+.cover{margin:-16mm -20mm;width:calc(100% + 40mm);height:297mm;background:linear-gradient(150deg,var(--d) 0%,var(--p) 65%,#d6336c 100%);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28mm 22mm;page-break-after:always}
+.cover-ic{font-size:52pt;margin-bottom:7mm}
+.cover h1{font-family:'Fraunces',Georgia,serif;font-size:26pt;line-height:1.1;margin-bottom:4mm}
+.cover-sub{font-size:11pt;opacity:.85;margin-bottom:7mm}
+.cover-rule{width:50mm;height:1.5px;background:rgba(255,255,255,.4);margin:0 auto 7mm}
+.cover-meta{font-size:9pt;opacity:.6}
+
+/* Typography */
+h2{font-family:'Fraunces',Georgia,serif;font-size:17pt;color:var(--d);margin-bottom:3mm;padding-bottom:2mm;border-bottom:2px solid var(--p)}
+h3{font-family:'Fraunces',Georgia,serif;font-size:12pt;color:var(--p);margin:3.5mm 0 2mm}
+p{margin-bottom:2.5mm}
+ul,ol{padding-left:5mm;margin-bottom:2.5mm}
+li{margin-bottom:1.5mm}
+
+/* Boxes */
+.box{background:var(--c);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:3mm 4mm;margin:3mm 0}
+.box.gold{border-color:#f2a93b;background:#fffbf0}
+
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:2mm;margin:3mm 0}
+.step{display:flex;gap:3mm;align-items:flex-start}
+.step-n{flex-shrink:0;width:6.5mm;height:6.5mm;background:var(--p);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:9.5pt;margin-top:.5mm}
+.step-t{font-weight:700;color:var(--d)}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:3mm 0;font-size:9.5pt}
+th{background:var(--d);color:white;padding:2mm 3mm;text-align:left}
+td{padding:2mm 3mm;border-bottom:1px solid var(--li)}
+tr:nth-child(even) td{background:var(--c)}
+
+/* Category header */
+.cat-header{background:linear-gradient(90deg,var(--d),var(--p));color:white;border-radius:8px;padding:3mm 5mm;margin:4mm 0 3mm;display:flex;align-items:center;gap:3mm;page-break-after:avoid}
+.cat-header .cat-em{font-size:18pt}
+.cat-header h3{font-family:'Fraunces',Georgia,serif;font-size:14pt;color:white;margin:0;border:none}
+.cat-header span{font-size:9pt;opacity:.8;margin-left:auto}
+
+/* Recipe grid */
+.recipe-page{page-break-after:always;break-after:page;display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.rc{border:1px solid var(--li);border-radius:7px;overflow:hidden;display:flex;flex-direction:column}
+.rc-head{background:linear-gradient(135deg,var(--d),var(--p));color:white;padding:2.5mm 3.5mm}
+.rc-num{font-size:8pt;opacity:.65;letter-spacing:.05em}
+.rc-name{font-family:'Fraunces',Georgia,serif;font-size:13pt;line-height:1.1;margin:.5mm 0}
+.rc-cat{font-size:8pt;opacity:.7}
+.rc-body{padding:2.5mm 3.5mm;flex:1}
+.rc-row{display:flex;gap:2mm;margin-bottom:1.5mm;font-size:9pt;line-height:1.3}
+.rc-label{font-weight:700;color:var(--p);min-width:16mm;flex-shrink:0}
+.rc-tip{background:var(--b);padding:2mm 3.5mm;font-size:8.5pt;border-top:1px solid var(--li)}
+
+/* Closing */
+.closing{text-align:center;padding-top:15mm}
+.closing h2{border:none;font-size:22pt;color:var(--d);margin-bottom:5mm}
+.closing p{font-size:11pt;color:var(--mu);max-width:120mm;margin:3mm auto}
+
+/* Quick ref table */
+.ref-table{width:100%;border-collapse:collapse;font-size:9pt}
+.ref-table th{background:var(--p);color:white;padding:2mm 3mm}
+.ref-table td{padding:2mm 3mm;border-bottom:1px solid var(--li);vertical-align:top}
+.ref-table tr:nth-child(even) td{background:var(--c)}
+</style>
+</head>
+<body>
+
+<!-- BORÍTÓ -->
+<div class="cover">
+  <div class="cover-ic">🛁</div>
+  <h1>Fürdőzselé Készlet<br>Útmutatója</h1>
+  <p class="cover-sub">50 Recept · 5 Lépéses Módszer · Teljes útmutató a gyártástól az eladásig</p>
+  <div class="cover-rule"></div>
+  <p class="cover-meta">Fürdőzselé Készlet © A te teljes terméked</p>
+</div>
+
+<!-- TARTALOMJEGYZÉK -->
+<div class="pb">
+<h2>Tartalomjegyzék</h2>
+<table>
+<tr><td>Mi a fürdőzselé</td><td style="text-align:right;color:var(--mu)">3</td></tr>
+<tr><td>Mire lesz szükséged</td><td style="text-align:right;color:var(--mu)">4</td></tr>
+<tr><td>Alap recept és 5 lépéses módszer</td><td style="text-align:right;color:var(--mu)">5</td></tr>
+<tr><td>Tippek színekhez, illatokhoz és összetevőkhöz</td><td style="text-align:right;color:var(--mu)">6</td></tr>
+<tr><td style="font-weight:700;color:var(--p)">50 Recept (7–19. oldal)</td><td style="text-align:right;color:var(--mu)">7</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;Gyümölcsös (1–15)</td><td style="text-align:right;color:var(--mu)">7</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;Virágos (16–25)</td><td style="text-align:right;color:var(--mu)">11</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;Fűszeres & Friss (26–35)</td><td style="text-align:right;color:var(--mu)">14</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;Édes & Gourmand (36–45)</td><td style="text-align:right;color:var(--mu)">17</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;Különleges (46–50)</td><td style="text-align:right;color:var(--mu)">19</td></tr>
+<tr><td>Cimkék, csomagolás és ajándékkészletek</td><td style="text-align:right;color:var(--mu)">20</td></tr>
+<tr><td>Gyors összefoglaló: alap és módszer</td><td style="text-align:right;color:var(--mu)">21</td></tr>
+</table>
+<div class="box">
+<strong>Hogyan használd ezt az útmutatót:</strong> Az 5. oldalon megtalálod az alap receptet és módszert, ami <em>mind az 50 recepthez</em> érvényes. Minden receptkártya csak az eltérő összetevőket tünteti fel — az illatot, a színt és a különleges adalékot. Kezdj az alappal, majd add hozzá a kiválasztott recept összetevőit.
+</div>
+</div>
+
+<!-- BEVEZETŐ -->
+<div class="pb">
+<h2>Mi a fürdőzselé</h2>
+<p>A fürdőzselé a tusfürdő egy frissítő alternatívája: illatozik, megszínezi a vizet, ápolja a bőrt, és kocsonyás állagának köszönhetően különleges élménnyé teszi a fürdőt. Átlátszó tusfürdő alapból, vízből és zselatinból készül — vegyszerek és bonyolult eljárás nélkül.</p>
+<p>A házi készítés ára körülbelül <strong>450–700 Ft üvegcsénként (125 ml)</strong>. Kézműves vásárokon és webshopokban általában 2.500–5.000 Ft-ért adják el. Az árrés üvegcsénként 200–400%.</p>
+<h3>Miért éppen a fürdőzselé</h3>
+<ul>
+<li>Alacsony költség — alap + illat + szín</li>
+<li>Nincs szükség különleges felszerelésre, elég a konyha</li>
+<li>Egy délután alatt elkészíthető</li>
+<li>Vonzó vizuál — tökéletes Instagramra, vásárra és ajándékkészletekhez</li>
+<li>Folyamatosan lehet új recepteket és szezonális kiadásokat kitalálni</li>
+</ul>
+<h3>Hol értékesítheted</h3>
+<ul>
+<li><strong>Etsy / Meska.hu</strong> — online kézműves piacok</li>
+<li><strong>Kézműves és farmerpiacok</strong> — a vizuál magáért beszél</li>
+<li><strong>Ajándékcsomagok</strong> — Karácsony, Valentin-nap, Anyák napja</li>
+<li><strong>Instagram / Facebook</strong> — a jó fénybe fotózott üvegcsék rendkívül jól futnak</li>
+<li><strong>Helyi üzletek</strong> — kozmetikai boltok, zero-waste üzletek</li>
+</ul>
+<div class="box gold">
+<strong>Tipp kezdőknek:</strong> Az első adagot mindig kis mennyiségben készítsd el (1–2 üvegcse). Ellenőrizd az állagot és az illatot, mielőtt egész sorozatot gyártanál.
+</div>
+</div>
+
+<!-- FELSZERELÉS -->
+<div class="pb">
+<h2>Mire lesz szükséged</h2>
+<h3>Felszerelés</h3>
+<table>
+<tr><th>Eszköz</th><th>Hol szerezheted be</th><th>Hozzávetőleges ár</th></tr>
+<tr><td>Üveg- vagy rozsdamentes acél tál</td><td>Drogéria, IKEA</td><td>800–2.500 Ft</td></tr>
+<tr><td>Lábas vagy fazék (1–2 l)</td><td>Otthon</td><td>—</td></tr>
+<tr><td>Fakanál vagy szilikon spatula</td><td>Otthon</td><td>—</td></tr>
+<tr><td>Szilikon tölcsér</td><td>Drogéria, OBI</td><td>500–1.000 Ft</td></tr>
+<tr><td>125 ml vagy 250 ml üvegcsék</td><td>Aliexpress, Notino, Rossmann</td><td>200–500 Ft/db</td></tr>
+<tr><td>Mérőkanál (5 ml, 15 ml)</td><td>Drogéria, gyógyszertár</td><td>300–800 Ft</td></tr>
+<tr><td>Konyhai hőmérő</td><td>Lidl, dm drogéria</td><td>1.500–3.500 Ft</td></tr>
+<tr><td>70%-os izopropanol spray</td><td>Gyógyszertár</td><td>800–1.500 Ft</td></tr>
+</table>
+
+<h3>Alapanyagok (4 üvegcsére á 125 ml)</h3>
+<table>
+<tr><th>Alapanyag</th><th>Hol szerezheted be</th><th>Mennyiség</th></tr>
+<tr><td>Átlátszó tusfürdő alap</td><td>Mystic Moments, Florex, Notino</td><td>500 g</td></tr>
+<tr><td>Desztillált víz</td><td>Drogéria, szupermarket</td><td>150 ml</td></tr>
+<tr><td>Lapzselatin (vagy zselatinpor)</td><td>Szupermarket, Lidl, Aldi</td><td>20 g (10 lap)</td></tr>
+<tr><td>E-vitamin (tokoferol, opcionális)</td><td>Gyógyszertár, Rossmann</td><td>3 ml</td></tr>
+<tr><td>Illóolajok vagy parfümolajok</td><td>Florex, dm, online</td><td>10–15 csepp</td></tr>
+<tr><td>Élelmiszer- vagy kozmetikai festék</td><td>Cukrászdai kellékbolt, dm</td><td>2–5 csepp</td></tr>
+</table>
+</div>
+
+<!-- MÓDSZER -->
+<div class="pb">
+<h2>Alap recept és az 5 lépéses módszer</h2>
+<div class="box">
+<strong>Alap recept (minden recepthez érvényes):</strong><br>
+500 g átlátszó tusfürdő alap · 150 ml desztillált víz · 20 g lapzselatin (10 lap vagy 2 tasak zselatinpor) · 3 ml E-vitamin (opcionális, tartósítószerként)<br>
+<strong>Hozam: 4 üvegcse á 125 ml vagy 2 üvegcse á 250 ml</strong>
+</div>
+<div class="steps">
+<div class="step"><div class="step-n">1</div><div><span class="step-t">Áztatás</span> — Tedd a lapokat hideg vízbe 5 percre. Zselatinport 50 ml hideg vízzel öntsd le és hagyd duzzadni 5 percig.</div></div>
+<div class="step"><div class="step-n">2</div><div><span class="step-t">Melegítés</span> — Melegítsd fel a maradék vizet (100 ml) kb. 60 °C-ra — a hőmérő a legjobb barátod. Ne forrjon!</div></div>
+<div class="step"><div class="step-n">3</div><div><span class="step-t">Felolvasztás</span> — Nyomd ki a lapokat és keverd a meleg vízbe, amíg teljesen átlátszó nem lesz. Porral: öntsd az áztatott keveréket a meleg vízbe és keverd el.</div></div>
+<div class="step"><div class="step-n">4</div><div><span class="step-t">Összekeverés</span> — Lassan öntsd a tusfürdő alapba és kanállal keverd — ne habverővel! A gyors habverés buborékokat okoz, ami tönkreteszi a megjelenést.</div></div>
+<div class="step"><div class="step-n">5</div><div><span class="step-t">Ízesítés & töltés</span> — Add hozzá az illóolajat, festéket és esetleg az E-vitamint. Keverd 1 percig. Tölcsérrel töltsd az üvegcsékbe. Tedd hűtőbe 2–4 órára vagy egy éjszakára.</div></div>
+</div>
+<h3>Eltarthatóság és tárolás</h3>
+<p>E-vitamin nélkül: 2–3 hét hűtőben. E-vitaminnal: 4–6 hét. Tárold hűvösen, védd a naptól. Értékesítésnél javasold a vásárlóknak, hogy tartsák hűtőben és fogyasszák el a készítéstől számított 4 héten belül.</p>
+<div class="box gold">
+<strong>Ha a zselé nem dermed meg:</strong> Legközelebb adj hozzá 5 g-mal több zselatint, vagy próbálj más gyártótól származó alapot — minden gél kicsit másképpen viselkedik. Az első adag mindig próbaadag.
+</div>
+</div>
+
+<!-- TIPPEK -->
+<div class="pb">
+<h2>Tippek illatokhoz, színekhez és összetevőkhöz</h2>
+<h3>Illóolajok vs. parfümolajok</h3>
+<table>
+<tr><th>Típus</th><th>Előnyök</th><th>Hátrányok</th></tr>
+<tr><td>Illóolaj (EO)</td><td>Természetes, intenzív, terápiás tulajdonságok</td><td>Drágább, némelyik irritálhatja a bőrt</td></tr>
+<tr><td>Parfümolaj (FO)</td><td>Olcsóbb, stabil illat, több variáció</td><td>Szintetikus, kevésbé terápiás</td></tr>
+</table>
+<h3>Adagolás</h3>
+<ul>
+<li><strong>Citrusos illóolajok</strong> (citrom, grépfrút, narancs): 15–20 csepp — gyorsan párolog el</li>
+<li><strong>Virágos és fűszeres illóolajok</strong>: 10–15 csepp</li>
+<li><strong>Parfümolajok</strong>: 10–12 csepp — intenzívebb, tovább tart</li>
+<li><strong>Irritáló illóolajok</strong> (fahéj, szegfűszeg): max. 5 csepp, előre teszteld a bőrön!</li>
+</ul>
+<h3>Extra összetevők</h3>
+<ul>
+<li><strong>Olajok</strong> (mandula, jojoba, kókusz): 1 teáskanál adagonként → ápolóhatás</li>
+<li><strong>Aloe vera gél</strong>: 2 evőkanál → add a gélhez, ideális érzékeny bőrre</li>
+<li><strong>Kávézacc</strong>: 1 teáskanál → enyhe hámlasztóhatás</li>
+<li><strong>Szárított gyógynövények / rózsaszirmok / levendula</strong>: az üvegcse aljára → rusztikus megjelenés</li>
+<li><strong>Kiwi- vagy maracujamagok</strong>: utoljára add hozzá → vizuális attrakcióé, trendi hatás</li>
+<li><strong>Élelmiszercsillogó (glitter)</strong>: ¼ teáskanál → Instagram-siker</li>
+</ul>
+<div class="box">
+<strong>Biztonság:</strong> Mindig kozmetikumhoz vagy élelmiszerhez szánt összetevőket használj. Teszteld az új illóolajokat egy kis bőrfelületen, mielőtt felhasználod. Soha ne használj aromadiffúzorhoz vagy gyertyához szánt illatokat.
+</div>
+</div>
+
+<!-- GYÜMÖLCSÖS 1-4 -->
+<div class="cat-header"><span class="cat-em">🍓</span><h3>Gyümölcsös receptek (1–15)</h3><span>Receptek: 15</span></div>
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 01 · GYÜMÖLCSÖS</div><div class="rc-name">Eper</div><div class="rc-cat">Friss és édes, mint a kertből szedett eper</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp illóolaj vagy FO eper</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp piros festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál kiwimag (opcionális)</div></div><div class="rc-tip">💡 Adj hozzá 1 teáskanál ricinusolajat extra ragyogásért.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 02 · GYÜMÖLCSÖS</div><div class="rc-name">Málna</div><div class="rc-cat">Édes savanyú csúccsal, mint a friss málna</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO málna</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp lila-piros festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított málna az üvegcse aljára</div></div><div class="rc-tip">💡 Kombinálj egy csepp jázmin FO-val összetettebb illatért.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 03 · GYÜMÖLCSÖS</div><div class="rc-name">Mangó</div><div class="rc-cat">Trópusi és meleg, mint az érett mangó</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp FO mangó</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp sárga + 2 csepp narancs festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 Szárított narancshéj az üvegcse aljára vizuális hatásért.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 04 · GYÜMÖLCSÖS</div><div class="rc-name">Citrom</div><div class="rc-cat">Friss és ébresztő, ideális reggelre</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>15 csepp illóolaj citrom</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>½ teáskanál citromsav</div></div><div class="rc-tip">💡 Használj természetes illóolajat, ne parfümolajat — intenzívebb és frissebb.</div></div>
+</div>
+
+<!-- GYÜMÖLCSÖS 5-8 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 05 · GYÜMÖLCSÖS</div><div class="rc-name">Narancs</div><div class="rc-cat">Energizáló és pezsdítő</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp illóolaj édes narancs</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp narancs festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál sárgabarack-olaj</div></div><div class="rc-tip">💡 Tökéletes reggeli recept — ébreszt és energizál.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 06 · GYÜMÖLCSÖS</div><div class="rc-name">Áfonya</div><div class="rc-cat">Gazdag és édes, sötét gyümölcs illata</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO áfonya</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp kék + 2 csepp lila festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál napraforgóolaj</div></div><div class="rc-tip">💡 Szárított áfonya az üvegcse aljára rusztikus megjelenést ad.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 07 · GYÜMÖLCSÖS</div><div class="rc-name">Őszibarack</div><div class="rc-cat">Finom és édes, ajándéknak tökéletes</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO őszibarack</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp narancs + 1 csepp piros festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál sárgabarack-olaj</div></div><div class="rc-tip">💡 Anyáknak és fiatalabb lányoknak ajándékba kiváló bestseller.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 08 · GYÜMÖLCSÖS</div><div class="rc-name">Sárgabarack</div><div class="rc-cat">Finoman gyümölcsös meleg tónusokkal</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO sárgabarack</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos narancs festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál ricinusolaj</div></div><div class="rc-tip">💡 A sárgabarack FO intenzívebb lehet — kezdj kevesebbet hozzáadni.</div></div>
+</div>
+
+<!-- GYÜMÖLCSÖS 9-12 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 09 · GYÜMÖLCSÖS</div><div class="rc-name">Ananász</div><div class="rc-cat">Trópusi és játékos, nyár egy üvegcsében</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp FO ananász</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál kókuszolaj</div></div><div class="rc-tip">💡 Kombinálj egy kis kókusz FO-val igazi trópusi hangulatért.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 10 · GYÜMÖLCSÖS</div><div class="rc-name">Grépfrút</div><div class="rc-cat">Friss és pezsdítő, citrusos napkezdés</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>15 csepp illóolaj grépfrút</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos rózsaszín festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>—</div></div><div class="rc-tip">💡 A citrusos illóolajok erősebbek — kezdj kevesebbel és fokozatosan add hozzá.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 11 · GYÜMÖLCSÖS</div><div class="rc-name">Kivi</div><div class="rc-cat">Egzotikus és játékos kis magokkal</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp FO kivi</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál szárított kiwimag</div></div><div class="rc-tip">💡 A kiwimag trendis természetes adalék — trendy hatás fotókhoz.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 12 · GYÜMÖLCSÖS</div><div class="rc-name">Licsí</div><div class="rc-cat">Finom és ázsiai ihletésű, prémium hatás</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO licsí</div><div class="rc-row"><span class="rc-label">Szín:</span>2 csepp világos rózsaszín festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál jojoba olaj</div></div><div class="rc-tip">💡 Finom és ázsiai ihletésű — kiváló ünnepekre és ajándékkiadásokra.</div></div>
+</div>
+
+<!-- GYÜMÖLCSÖS 13-15 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 13 · GYÜMÖLCSÖS</div><div class="rc-name">Maracuja</div><div class="rc-cat">Trópusi jellegzetes magokkal</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO maracuja / passion fruit</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp sárga + 2 csepp narancs festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>maracujamagok (szárított vagy friss)</div></div><div class="rc-tip">💡 Az eredeti magok ennek a terméknek az ikonjai — ne hagyd ki!</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 14 · GYÜMÖLCSÖS</div><div class="rc-name">Meggy</div><div class="rc-cat">Édes és gazdag, mint a meggykompót</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO meggy</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp piros festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított meggy az üvegcse aljára (opcionális)</div></div><div class="rc-tip">💡 A piros festék hatásos, de mértékkel használd — 4 csepp elég.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 15 · GYÜMÖLCSÖS</div><div class="rc-name">Körte</div><div class="rc-cat">Elegáns és visszafogott, ajándékba népszerű</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO körte</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál jojoba olaj</div></div><div class="rc-tip">💡 Elegáns és visszafogott illat — tökéletes ajándékkészletekbe férfiaknak és nőknek egyaránt.</div></div>
+<div class="rc" style="visibility:hidden"></div>
+</div>
+
+<!-- VIRÁGOS 16-19 -->
+<div class="cat-header" style="page-break-before:always"><span class="cat-em">🌸</span><h3>Virágos receptek (16–25)</h3><span>Receptek: 10</span></div>
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 16 · VIRÁGOS</div><div class="rc-name">Levendula</div><div class="rc-cat">Klasszikus, megnyugtató, legjobban fogyó illat</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>15 csepp levendula illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp lila festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál szárított levendula az üvegcse aljára</div></div><div class="rc-tip">💡 A levendula illóolaj az egyik legbiztonságosabb bőrre.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 17 · VIRÁGOS</div><div class="rc-name">Rózsa</div><div class="rc-cat">Romantikus és luxus, egész éves bestseller</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO vagy illóolaj rózsa</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp piros + 1 csepp fehér (világos rózsaszín)</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított rózsaszirmok</div></div><div class="rc-tip">💡 Egész éves legjobban fogyó illat — szirmokkal a vizuális hatás fantasztikus.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 18 · VIRÁGOS</div><div class="rc-name">Jázmin</div><div class="rc-cat">Intenzív és érzéki, éjszakai fürdőhöz</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp illóolaj vagy FO jázmin</div><div class="rc-row"><span class="rc-label">Szín:</span>2 csepp fehér festék (tejfehér)</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 A jázmin nagyon intenzív — a kevesebb több, kezdj 8 cseppel.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 19 · VIRÁGOS</div><div class="rc-name">Kamilla</div><div class="rc-cat">Finom és megnyugtató, érzékeny bőrre ideális</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp kamilla illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál kamillakivonat (opcionális)</div></div><div class="rc-tip">💡 Megnyugtató hatás — ideális esti fürdőhöz vagy érzékeny bőrhöz.</div></div>
+</div>
+
+<!-- VIRÁGOS 20-23 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 20 · VIRÁGOS</div><div class="rc-name">Pünkösdi rózsa</div><div class="rc-cat">Tavaszi és friss, május bestsellere</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO pünkösdi rózsa</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos rózsaszín festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított szirmok (opcionális)</div></div><div class="rc-tip">💡 Tavasz egy üvegcsében — siker a vásárokon május-júniusban.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 21 · VIRÁGOS</div><div class="rc-name">Gardénia</div><div class="rc-cat">Elegáns fehér, prémium hatás</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO gardénia</div><div class="rc-row"><span class="rc-label">Szín:</span>fehér / átlátszó (festék nélkül vagy 1 csepp fehér)</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál jojoba olaj</div></div><div class="rc-tip">💡 Elegáns fehér prémium hatáshoz — tökéletes ajándékcsomagokba.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 22 · VIRÁGOS</div><div class="rc-name">Hibiszkusz</div><div class="rc-cat">Egzotikus és gazdag szín, trópusi hatás</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO hibiszkusz</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp piros + 1 csepp lila festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>½ teáskanál hibiszkuszpor (opcionális)</div></div><div class="rc-tip">💡 A természetes hibiszkusz finom vöröslila tónusokat ad szintetikus festék nélkül.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 23 · VIRÁGOS</div><div class="rc-name">Magnólia</div><div class="rc-cat">Kifinomult és krémes illat</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO magnólia</div><div class="rc-row"><span class="rc-label">Szín:</span>2 csepp fehér / krémszín festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 Finom és kifinomult illat prémium ajándékkészletekbe.</div></div>
+</div>
+
+<!-- VIRÁGOS 24-25 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 24 · VIRÁGOS</div><div class="rc-name">Frézia</div><div class="rc-cat">Finom és univerzális, szinte mindenkinek tetszik</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO frézia</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított frézia az üvegcse aljára (opcionális)</div></div><div class="rc-tip">💡 A frézia "biztonságos" illat — tökéletes ajándék, ha nem ismered a vevő ízlését.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 25 · VIRÁGOS</div><div class="rc-name">Orchidea</div><div class="rc-cat">Egzotikus és prémium, igényes vevőknek</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO orchidea</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp lila festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál selyemfehérje (opcionális, gyógyszertárban)</div></div><div class="rc-tip">💡 Orchidea selyemfehérjével prémium terméket alkot — kérj magasabb árat érte.</div></div>
+<div class="rc" style="visibility:hidden"></div>
+<div class="rc" style="visibility:hidden"></div>
+</div>
+
+<!-- FŰSZERES 26-29 -->
+<div class="cat-header" style="page-break-before:always"><span class="cat-em">🌿</span><h3>Fűszeres & Friss receptek (26–35)</h3><span>Receptek: 10</span></div>
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 26 · FŰSZERES</div><div class="rc-name">Menta</div><div class="rc-cat">Frissítő és hűsítő, sport után ideális</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>15 csepp borsmenta illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>¼ teáskanál mentolkristály (opcionális)</div></div><div class="rc-tip">💡 A menta sport után vagy forró nyárban frissítő — kiválóan fogy.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 27 · FŰSZERES</div><div class="rc-name">Eukaliptusz</div><div class="rc-cat">Friss és tiszta, mint a fürdőzselé a gyógyfürdőben</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp eukaliptusz illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp türkizkék vagy zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál tengeri só (a gélbe, nem a vízbe)</div></div><div class="rc-tip">💡 Kombinálj mentával erősebb mentol hatásért.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 28 · FŰSZERES</div><div class="rc-name">Rozmaring</div><div class="rc-cat">Serkentő és friss, reggeli ébresztő</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp rozmaring illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp sötétzöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított rozmaring az üvegcse aljára</div></div><div class="rc-tip">💡 A rozmaring serkenti a bőrt — tökéletes reggeli recept aktív vevőknek.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 29 · FŰSZERES</div><div class="rc-name">Aloe Vera</div><div class="rc-cat">Megnyugtató és ápoló, érzékeny bőrre</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>8 csepp FO aloe vera</div><div class="rc-row"><span class="rc-label">Szín:</span>átlátszó vagy 1 csepp zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>2 evőkanál aloe vera gél (add a gélhez)</div></div><div class="rc-tip">💡 Az aloe vera gél 10%-kal növeli a tartalmat — kiváló érzékeny vagy száraz bőrre.</div></div>
+</div>
+
+<!-- FŰSZERES 30-33 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 30 · FŰSZERES</div><div class="rc-name">Bazsalikom & Citrom</div><div class="rc-cat">Friss fűszer és citrus kombinációja</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>8 csepp bazsalikom + 7 csepp citrom illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított bazsalikom az üvegcse aljára</div></div><div class="rc-tip">💡 Két illóolaj kombinálásánál előbb keverd össze egy kis tartályban, majd add hozzá.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 31 · FŰSZERES</div><div class="rc-name">Teafaolaj</div><div class="rc-cat">Tiszta és antibakteriális, természetes védelem</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp teafaolaj illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>fehér / átlátszó (festék nélkül)</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 A teafaolaj természetes antibakteriális — kiváló értékesítési érv.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 32 · FŰSZERES</div><div class="rc-name">Gyömbér</div><div class="rc-cat">Melegítő és serkentő, téli kedvenc</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp gyömbér illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp arany / sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>¼ teáskanál gyömbérpor (opcionális)</div></div><div class="rc-tip">💡 A gyömbér melegít és serkent — ideális téli szezonális készletbe.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 33 · FŰSZERES</div><div class="rc-name">Citromfű</div><div class="rc-cat">Friss és füves, mint a citrom egy réten</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>15 csepp citronella / lemongrass illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp sárgás-zöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított gyógynövények az üvegcse aljára</div></div><div class="rc-tip">💡 Kellemes nyári illat — kicsit citromos, de füvesebb és frissebb.</div></div>
+</div>
+
+<!-- FŰSZERES 34-35 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 34 · FŰSZERES</div><div class="rc-name">Citrommelissza</div><div class="rc-cat">Finom és megnyugtató, citromos gyógynövény</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp citrommelissza illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított citrommelissza az üvegcse aljára</div></div><div class="rc-tip">💡 Finom és visszafogott — jól kombinálható jázminnal vagy kamillával.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 35 · FŰSZERES</div><div class="rc-name">Tengeri levegő</div><div class="rc-cat">Friss és tiszta, mint a tenger szele</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO tengeri levegő / ocean</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos kék festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>½ teáskanál finom tengeri só (opcionális)</div></div><div class="rc-tip">💡 Nyárra és ajándékkészletekbe népszerű — uniszex választásként is kiváló.</div></div>
+<div class="rc" style="visibility:hidden"></div>
+<div class="rc" style="visibility:hidden"></div>
+</div>
+
+<!-- ÉDES 36-39 -->
+<div class="cat-header" style="page-break-before:always"><span class="cat-em">🍰</span><h3>Édes & Gourmand receptek (36–45)</h3><span>Receptek: 10</span></div>
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 36 · ÉDES</div><div class="rc-name">Vanília</div><div class="rc-cat">Klasszikus és meleg, minden korosztálynak</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO vanília</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp krémszín / bézs festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 A vanília az egyik leguniverzálisabb illat — szinte mindenki szereti.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 37 · ÉDES</div><div class="rc-name">Karamelll</div><div class="rc-cat">Édes és meleg, mint a házi karamell</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO karamell</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp arany / barna festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál ricinusolaj</div></div><div class="rc-tip">💡 A karamelilla csábító ajándék — különösen kedvelt az ünnepi szezonsban.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 38 · ÉDES</div><div class="rc-name">Csokoládé</div><div class="rc-cat">Gazdag és érzéki, kakaó és kényeztetés</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO csokoládé / kakaó</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp barna festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál kakaópor (esztétikai célra)</div></div><div class="rc-tip">💡 Kombinálj vanília FO-val fehér csokis hatásért — különleges ajándék lesz.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 39 · ÉDES</div><div class="rc-name">Fahéj</div><div class="rc-cat">Fűszeres és meleg, őszi és téli szezon</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>5 csepp fahéj illóolaj (max!)</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp narancsos-barna festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál gyömbérpor (kombinálva)</div></div><div class="rc-tip">💡 A fahéj irritálhat — max. 5 csepp és előre teszteld a bőrön!</div></div>
+</div>
+
+<!-- ÉDES 40-43 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 40 · ÉDES</div><div class="rc-name">Kókusz</div><div class="rc-cat">Trópusi és lágy, nyári lazítás</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>12 csepp FO kókusz</div><div class="rc-row"><span class="rc-label">Szín:</span>fehér / átlátszó</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál kókuszolaj</div></div><div class="rc-tip">💡 A kókusz nyáron és télén egyaránt fogy — időtlen üdülős hangulat.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 41 · ÉDES</div><div class="rc-name">Méz & Tej</div><div class="rc-cat">Lágy és bársonyos, bőrápolóként is kiváló</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>8 csepp FO méz + 4 csepp FO tej / tejszín</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp krémszín / sárga festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 Két illat kombinálásánál először keverd össze a cseppeket.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 42 · ÉDES</div><div class="rc-name">Pralína</div><div class="rc-cat">Gazdag dió és édes karamell</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO pralína / mandula</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp meleg barna festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál édes mandulaolaj</div></div><div class="rc-tip">💡 Prémium ajándékszetbe tökéletes a pralína — karácsony előtt bestseller.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 43 · ÉDES</div><div class="rc-name">Bodza</div><div class="rc-cat">Finom és friss virágos édesség</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO bodza</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp világos lila festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított bodzavirág az üvegcse aljára</div></div><div class="rc-tip">💡 Bodza a tavasz és nyár jellegzetes illata — idényes kiadásokhoz tökéletes.</div></div>
+</div>
+
+<!-- ÉDES 44-45 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 44 · ÉDES</div><div class="rc-name">Szamóca & Tejszín</div><div class="rc-cat">Desszert élmény az esti fürdőhöz</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp FO eper + 3 csepp FO tejszín</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp rózsaszín festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál ricinusolaj</div></div><div class="rc-tip">💡 Desszert-jellegű illat — rendkívül népszerű fiatal nők körében.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 45 · ÉDES</div><div class="rc-name">Pünkösdi rózsa & Vanília</div><div class="rc-cat">Virágos és édes, romantikus kombináció</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>8 csepp FO pünkösdi rózsa + 4 csepp FO vanília</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp rózsaszín festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított szirmok + 1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 Ez a kombináció rendkívül jól fogy Anyák napján és Valentin-napkor.</div></div>
+<div class="rc" style="visibility:hidden"></div>
+<div class="rc" style="visibility:hidden"></div>
+</div>
+
+<!-- KÜLÖNLEGES 46-49 -->
+<div class="cat-header" style="page-break-before:always"><span class="cat-em">✨</span><h3>Különleges receptek (46–50)</h3><span>Receptek: 5</span></div>
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 46 · KÜLÖNLEGES</div><div class="rc-name">Karácsonyi fenyő</div><div class="rc-cat">Szezonális bestseller, tél illata</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp lucfenyő + 5 csepp fahéj illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>4 csepp sötétzöld festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított fenyőtűk az üvegcse aljára</div></div><div class="rc-tip">💡 November-decemberben az egyik legjobban fogyó termék — ajándéknak ideális.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 47 · KÜLÖNLEGES</div><div class="rc-name">Rózsa & Fekete bors</div><div class="rc-cat">Sofisztikált uniszex illatú prémium termék</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>8 csepp FO rózsa + 4 csepp fekete bors illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp mélypiros festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál jojoba olaj + szárított szirmok</div></div><div class="rc-tip">💡 Uniszex illat — tökéletes pároknak szóló ajándékba.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 48 · KÜLÖNLEGES</div><div class="rc-name">Levendula & Menta</div><div class="rc-cat">Megnyugtató és frissítő egyszerre</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>10 csepp levendula + 5 csepp borsmenta illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp lila + 1 csepp kék festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított levendula az üvegcse aljára</div></div><div class="rc-tip">💡 Klasszikus és egzotikus kombináció — meglepő, hogy mennyire jól fogy.</div></div>
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 49 · KÜLÖNLEGES</div><div class="rc-name">Trópusi koktél</div><div class="rc-cat">Mangó, ananász és kókusz — nyár egész évben</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>5 csepp FO mangó + 4 csepp FO ananász + 3 csepp FO kókusz</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp sárga + 2 csepp narancs festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>1 teáskanál kókuszolaj + maracujamagok</div></div><div class="rc-tip">💡 Három illat keverékekor előbb keverd össze külön, majd add a gélhez.</div></div>
+</div>
+
+<!-- KÜLÖNLEGES 50 -->
+<div class="recipe-page">
+<div class="rc"><div class="rc-head"><div class="rc-num">RECEPT 50 · KÜLÖNLEGES</div><div class="rc-name">Rózsa & Zsálya</div><div class="rc-cat">Elegáns és kifinomult, prémium ár</div></div><div class="rc-body"><div class="rc-row"><span class="rc-label">Illat:</span>8 csepp FO rózsa + 5 csepp zsálya illóolaj</div><div class="rc-row"><span class="rc-label">Szín:</span>3 csepp dusty pink (halványrózsaszín) festék</div><div class="rc-row"><span class="rc-label">Összetevő:</span>szárított rózsaszirmok + 1 teáskanál mandulaolaj</div></div><div class="rc-tip">💡 Ez a legelegánsabb recept — prémium csomagolással magasabb áron adható el.</div></div>
+<div class="rc" style="visibility:hidden"></div>
+<div class="rc" style="visibility:hidden"></div>
+<div class="rc" style="visibility:hidden"></div>
+</div>
+
+<!-- CIMKÉK ÉS CSOMAGOLÁS -->
+<div class="pb">
+<h2>Cimkék, csomagolás és ajándékkészletek</h2>
+<h3>Cimkézési alapelvek</h3>
+<ul>
+<li><strong>Kötelező elemek:</strong> termék neve, összetevők listája (INCI), névleges tartalom (ml), gyártó neve és elérhetősége, "Csak külső használatra" felirat</li>
+<li><strong>Ajánlott elemek:</strong> illat neve, az eltarthatóság (pl. "Készítve: 2026-11-18, fogyasztható: 4 hétig"), egyedi cimke design</li>
+<li><strong>Méretek:</strong> 125 ml-es üvegcsékhez 40×60 mm-es cimke tökéletes; kerek cimke az aljára 35 mm</li>
+</ul>
+<h3>Csomagolási ötletek</h3>
+<table>
+<tr><th>Csomagolás típusa</th><th>Alkalmazás</th><th>Hozzávetőleges extra költség</th></tr>
+<tr><td>Kraft papír doboz</td><td>Egyszeres ajándék, vásáros stand</td><td>+150–300 Ft/db</td></tr>
+<tr><td>Átlátszó műanyag doboz</td><td>A zselé látható marad, trendi hatás</td><td>+100–200 Ft/db</td></tr>
+<tr><td>Ajándékkosár / -doboz</td><td>3–5 darabos készlet ajándékba</td><td>+500–1.500 Ft/db</td></tr>
+<tr><td>Zsineggel kötött kraft cimke</td><td>Rusztikus, kézműves hatás</td><td>+30–50 Ft/db</td></tr>
+</table>
+<h3>Ajándékkészlet ötletek</h3>
+<ul>
+<li><strong>Anyák napi szett (3 db):</strong> Rózsa + Levendula + Jázmin — kb. 7.500 Ft ajándékdobozban</li>
+<li><strong>Karácsonyi szett (4 db):</strong> Karácsonyi fenyő + Fahéj + Vanília + Citrom — kb. 9.000 Ft</li>
+<li><strong>Pár szett (2 db):</strong> Rózsa & Fekete bors + Levendula & Menta — kb. 5.500 Ft</li>
+<li><strong>Trópusi nyári szett (3 db):</strong> Mangó + Ananász + Kókusz — kb. 6.000 Ft</li>
+</ul>
+<div class="box gold">
+<strong>Árazási szabály az ajándékkészletekhez:</strong> Szett ára = üvegcsék ára × 2,5 (nem × 3). Az ember hajlandó kissé kevesebbet fizetni a szettért, de még mindig 150%-os árrést biztosít.
+</div>
+</div>
+
+<!-- GYORS ÖSSZEFOGLALÓ -->
+<div class="pb">
+<h2>Gyors összefoglaló: alap és módszer</h2>
+<table class="ref-table">
+<tr><th>Elem</th><th>Részlet</th></tr>
+<tr><td><strong>Alap recept</strong></td><td>500 g tusfürdő alap · 150 ml desztillált víz · 20 g lapzselatin · 3 ml E-vitamin (opcionális)</td></tr>
+<tr><td><strong>Hozam</strong></td><td>4 × 125 ml üvegcse</td></tr>
+<tr><td><strong>5 lépés</strong></td><td>1. Áztatás → 2. Melegítés (60°C) → 3. Felolvasztás → 4. Összekeverés → 5. Ízesítés & töltés</td></tr>
+<tr><td><strong>Hűtési idő</strong></td><td>2–4 óra hűtőben (vagy egy éjszaka)</td></tr>
+<tr><td><strong>Illóolaj adagolás</strong></td><td>Citrusos: 15–20 csepp · Virágos/fűszeres: 10–15 csepp · Parfümolaj: 10–12 csepp</td></tr>
+<tr><td><strong>Festék adagolás</strong></td><td>2–5 csepp (mindig kevéssé kezdd el!)</td></tr>
+<tr><td><strong>Eltarthatóság</strong></td><td>E-vitamin nélkül: 2–3 hét · E-vitaminnal: 4–6 hét · Hűtőben tárolva</td></tr>
+<tr><td><strong>Önköltség</strong></td><td>~450–700 Ft / üvegcse (125 ml)</td></tr>
+<tr><td><strong>Piaci eladási ár</strong></td><td>2.500–5.000 Ft / üvegcse</td></tr>
+<tr><td><strong>Árrés</strong></td><td>200–400% üvegcsénként</td></tr>
+<tr><td><strong>Ha nem dermed meg</strong></td><td>+5 g zselatin vagy más tusfürdő alap; az első adag mindig próbaadag</td></tr>
+</table>
+<div class="box gold" style="margin-top:5mm">
+<strong>Legfontosabb szabály:</strong> Az első adagot mindig kis mennyiségben, próbaként készítsd el. Ellenőrizd az állagot és az illatot, mielőtt egész sorozatot gyártanál. Az idő és az alapanyag értékes — ne pazarold el egy rosszul beállított receptre.
+</div>
+</div>
+
+<!-- ZÁRSZÓ -->
+<div class="closing">
+  <h2>🛁 Gratulálok!</h2>
+  <p>Most már minden megvan ahhoz, hogy elkészítsd az első fürdőzselédet — és akár el is add.</p>
+  <p style="margin-top:4mm;font-weight:700;color:var(--p)">50 recept · 5 lépéses módszer · árkalkulátor és 5 bónusz eszköz</p>
+  <p style="margin-top:4mm">Következő lépés: válassz ki 2–3 receptet, készítsd el a próbaadagot, fotózd le és oszd meg!</p>
+</div>
+
+</body>
+</html>
